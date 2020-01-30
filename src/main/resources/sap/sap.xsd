@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="precompilata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="proprietario">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codiceRegione" type="xs:unsignedShort" />
+              <xs:element name="codiceAsl" type="xs:unsignedByte" />
+              <xs:element name="codiceSSA" type="xs:unsignedByte" />
+              <xs:element name="cfProprietario" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="documentoSpesa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idSpesa">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pIva" type="xs:unsignedLong" />
+                    <xs:element name="dataEmissione" type="xs:date" />
+                    <xs:element name="numDocumentoFiscale">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="dispositivo" type="xs:unsignedByte" />
+                          <xs:element name="numDocumento" type="xs:unsignedLong" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="dataPagamento" type="xs:date" />
+              <xs:element name="flagOperazione" type="xs:string" />
+              <xs:element name="cfCittadino" type="xs:string" />
+              <xs:element name="voceSpesa">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tipoSpesa" type="xs:string" />
+                    <xs:element name="importo" type="xs:decimal" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
